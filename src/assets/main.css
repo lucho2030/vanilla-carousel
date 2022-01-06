@@ -1,0 +1,36 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Francois One', sans-serif;
+}
+.nav-bar {
+  margin: 0 auto;
+  text-align: center;
+}
+.container {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+.comm-icon-box {
+  display: flex;
+  height: 480px;
+  width: 30px;
+}
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.comm-icon {
+  height: 45px;
+  width: 45px;
+}
+.carousel {
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+}
+.carousel-item {
+  max-height: 480px;
+}
