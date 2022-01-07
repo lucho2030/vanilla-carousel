@@ -3,13 +3,15 @@ import axios from 'axios'
 
 var photos = []
 var index = 0
-var Url = null
+var img = null
+var renderedPhoto = null
 
-function getPhotos() {
+function getPhotos () {
   axios.get('https://jsonplaceholder.typicode.com/photos')
     .then((response) => {
-      photos = response.data.slice(0, 5)
-      console.log(photos)
+      photos = response.data
+      carouselImg()
+      renderPhoto()
     })
     .catch((error) => {
       alert(error)
@@ -17,29 +19,29 @@ function getPhotos() {
 }
 
 function carouselImg () {
-  var img = document.createElement('img')
-  Url = photos[index]
-  console.log(Url)
-  img.src = "https://via.placeholder.com/600/92c952" //photos[index].url
+  img = document.createElement('img')
+  img.src = photos[index].url
   img.className = 'carousel-img'
+  console.log(img)
   return img
 }
-document.getElementById('carousel').appendChild(carouselImg())
 
-/*
-window.onload = () => {
-  getPhotos() 
+function renderPhoto() {
+  img.innerHTML = ''
+  document.getElementById('carousel').appendChild(carouselImg())
 }
-*/
+
+getPhotos()
+
 //Next Photo
 document.getElementById('next').addEventListener('click', increment)
 function increment() {
   if ( index < 4) {
     index = index + 1
-    console.log(index)
+    renderPhoto()
   } else {
     index = 0
-    console.log(index)
+    renderPhoto()
   }
 }
 
@@ -48,9 +50,7 @@ document.getElementById("prev").addEventListener('click', decrement);
 function decrement() {
   if (index > 0){
     index = --index
-    carouselImg()
   } else {
-    index = 4
-    carouselImg()
+    index = 0
   }
 }
