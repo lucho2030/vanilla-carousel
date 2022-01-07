@@ -1,6 +1,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  min-width: 570px;
   text-align: center;
   font-family: 'Francois One', sans-serif;
 }
@@ -10,26 +11,27 @@ h1 {
 .nav-bar {
   margin: auto;
 }
-.carousel {
-  max-width: 720px;
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   margin: auto;
 }
-.icon-prev {
-  position: absolute;
-  transform: translate(-360px);
-  z-index: 1;
+#prev {
+  display: inline;
+  margin: 0;
+  padding: 0;
   height: 480px;
   background: none;
-  padding: 0;
   border: none;
   cursor: pointer;
 }
-.icon-next {
-  position: absolute;
-  transform: translate(315px);
+#next {
+  display: inline;
+  margin: 0;
+  padding: 0;
   height: 480px;
   background: none;
-  padding: 0;
   border: none;
   cursor: pointer;
 }
@@ -37,10 +39,9 @@ h1 {
   height: 45px;
   width: 45px;
 }
-.carousel-item {
-  position: absolute;
-}
 .carousel-img {
-  max-height: 480px;
-  max-width: 720px;
+  display: inline-flex;
+  margin: auto;
+  height: 480px;
+  width: 480px;
 }
