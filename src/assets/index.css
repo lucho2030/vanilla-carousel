@@ -1,0 +1,46 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: 'Francois One', sans-serif;
+}
+h1 {
+  font-size: 50px;
+}
+.nav-bar {
+  margin: auto;
+}
+.carousel {
+  max-width: 720px;
+  margin: auto;
+}
+.icon-prev {
+  position: absolute;
+  transform: translate(-360px);
+  z-index: 1;
+  height: 480px;
+  background: none;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+.icon-next {
+  position: absolute;
+  transform: translate(315px);
+  height: 480px;
+  background: none;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+}
+.comm-icon {
+  height: 45px;
+  width: 45px;
+}
+.carousel-item {
+  position: absolute;
+}
+.carousel-img {
+  max-height: 480px;
+  max-width: 720px;
+}
