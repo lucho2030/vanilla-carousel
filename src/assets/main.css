@@ -1,21 +1,11 @@
 html, body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
+  text-align: center;
   font-family: 'Francois One', sans-serif;
 }
 .nav-bar {
   margin: 0 auto;
-  text-align: center;
-}
-.container {
-  margin: 0 auto;
-  padding: 0;
-  text-align: center;
-}
-.comm-icon-box {
-  display: flex;
-  height: 480px;
-  width: 30px;
 }
 button {
   background: none;
@@ -26,11 +16,17 @@ button {
   height: 45px;
   width: 45px;
 }
-.carousel {
+main {
   display: flex;
-  margin: 0 auto;
-  padding: 0;
 }
-img {
-  max-height: 480px;
+#carousel {
+  display: flex;
+  margin: 5vw auto;
+  padding: 0;
+  box-shadow: 0 20px 30px black;
+  transition: all 1s;
+}
+.carousel-img {
+  max-height: 50vh;
+  max-width: 50vw;
 }
