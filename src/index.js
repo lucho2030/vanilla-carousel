@@ -4,14 +4,14 @@ import axios from 'axios'
 var photos = []
 var index = 0
 var img = null
-var renderedPhoto = null
 
+window.onload = getPhotos()
 function getPhotos () {
   axios.get('https://jsonplaceholder.typicode.com/photos')
     .then((response) => {
       photos = response.data
+      img = document.createElement('img')
       carouselImg()
-      renderPhoto()
     })
     .catch((error) => {
       alert(error)
@@ -19,29 +19,20 @@ function getPhotos () {
 }
 
 function carouselImg () {
-  img = document.createElement('img')
   img.src = photos[index].url
   img.className = 'carousel-img'
-  console.log(img)
-  return img
+  document.getElementById('carousel').appendChild(img)
 }
-
-function renderPhoto() {
-  img.innerHTML = ''
-  document.getElementById('carousel').appendChild(carouselImg())
-}
-
-getPhotos()
 
 //Next Photo
 document.getElementById('next').addEventListener('click', increment)
 function increment() {
   if ( index < 4) {
     index = index + 1
-    renderPhoto()
+    carouselImg()
   } else {
     index = 0
-    renderPhoto()
+    carouselImg()
   }
 }
 
@@ -49,8 +40,12 @@ function increment() {
 document.getElementById("prev").addEventListener('click', decrement);
 function decrement() {
   if (index > 0){
-    index = --index
+    index = index - 1
+    console.log(index)
+    carouselImg()
   } else {
-    index = 0
+    index = 4
+    console.log(index)
+    carouselImg()
   }
 }
